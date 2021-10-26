@@ -1,0 +1,67 @@
+// PSEUDO CODE
+
+Morning Challenge: A local coffee house is finally starting to take off ever since they introduced cold brew made from Kopi Luwak. They can’t handle their order volume and are starting to drop orders. Create an app that enables the cashier to enter the customer's name and their order. Then add that order to a queue that the baristas can see and give them the ability to mark an order complete. Completed orders should show which barista completed the order and have their own list. 
+Bonus points if the app automatically says the customer's name out loud when an order is complete.
+
+front end they can enter an order
+log in - all the barista's can log in 
+complete on an order list 
+Pending orders list
+Say customers name out loud
+
+
+// - wire framing —> 
+// how I want the app to look, 
+main page that allows any barista to put in an order 
+
+client side:
+different options and sizes of orders
+sign in 
+
+
+userpage:
+list of orders with name
+allow barista to mark complete 
+
+left side shows what orders are complete with name of barista who marked it complete
+
+
+
+
+// what I want it to do / how users will interact
+barista put in an order
+barista log-in and allow barista to mark complete
+
+
+
+
+// properties to send to post method
+
+
+collection names:
+barista
+user
+completed list
+
+
+// - run server 
+// - create new collection in MongoDB --> change collection names in code (db.collection('<collectionName>'))
+// - check connection to my server 
+
+// - set up front end (inputs, where I want things to be positioned (affects childnodes))
+
+//routes
+// - GET —> how many pages in my app? how many collections? 
+//--> admin page: rename res.render('admin.ejs', {<collectionName>: result})
+
+// - POST —> form inside of index.ejs -> what inputs / request body information do I want to send to the database? 
+name
+order
+
+
+// - PUT —> fetch call through main.js | what am I updating? what identifiers will I use to find that specific document?
+// --> send identifier information inside of fetch body. every property inside of JSON body request = req.body.<property> in server.js
+the customers order mark complete and call name 
+
+// - DELETE —> fetch call through main.js | what identifiers will I use to find that specific document?
+
