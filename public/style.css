@@ -37,7 +37,10 @@ h3{
 .hide{
   display: none;
 }
-
+.barista{
+  font-size: 2em;
+  color: rgb(223 137 37);
+}
 #barista{
   font-size: 2em;
   color: rgb(223 137 37);
