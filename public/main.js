@@ -1,4 +1,5 @@
 var complete = document.getElementsByClassName("completed");
+var trash = document.getElementsByClassName("clear");
 
 
 Array.from(complete).forEach(function(element) {
@@ -28,6 +29,26 @@ Array.from(complete).forEach(function(element) {
           window.location.reload(true)
         })
       });
+});
+
+
+Array.from(trash).forEach(function(element) {
+  element.addEventListener('click', function(){
+    const id = this.parentNode.parentNode.childNodes[7].innerText
+
+
+    fetch('messages', {
+      method: 'delete',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({
+       "id": id,
+      })
+    }).then(function (response) {
+      window.location.reload()
+    })
+  });
 });
 
 //https://usefulangle.com/post/98/javascript-text-to-speech how to add text to speech in your app

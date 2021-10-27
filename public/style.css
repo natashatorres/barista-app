@@ -14,7 +14,7 @@ img{
 
 .container{
 background-color: rgb(254 252 243);
-height: 100vh !important;
+height: 100% !important;
 }
 
 h1{
@@ -70,6 +70,7 @@ label{
   width: 20em !important;
   margin: auto;
   margin-top: 2em;
+  margin-bottom: 2em;
 }
 
 .completed{
@@ -81,9 +82,10 @@ label{
 
 ul{
   align-items: center;
+  padding-bottom: 2em;
 }
 li{
-  height: 10em;
+  height: 12.5em;
   width: 20em;
   border:3px solid rgb(49 28 15);;
   display: inline-block;
@@ -91,4 +93,9 @@ li{
   padding-top: 1.5em;
   margin-top: 2em;
 
+}
+
+.clear{
+  margin-bottom: 2em;
+  text-transform: uppercase;
 }

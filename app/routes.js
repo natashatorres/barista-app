@@ -58,7 +58,15 @@ module.exports = function(app, passport, db, ObjectId) {
           })
       })
 
-
+      app.delete('/messages', (req, res) => {
+        db.collection('order').findOneAndDelete({
+          _id: ObjectId(req.body.id)
+        }, (err, result) => {
+          if (err) return res.send(500, err)
+          res.send('Message deleted!')
+        })
+      })
+    
 // =============================================================================
 // AUTHENTICATE (FIRST LOGIN) ==================================================
 // =============================================================================

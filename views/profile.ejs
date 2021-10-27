@@ -29,7 +29,7 @@
               <p>Order: <%= orders[i].order %></p>
               <span class="hide"><%= orders[i].completed %></span>
               <span class="hide"><%= orders[i]._id %></span>
-              <p><button type="submit" value="barista" class="completed">Completed</button</p>
+              <p><button type="submit" value="barista" class="btn btn-primary btn-sm completed">Completed</button</p>
             </li>
 
             </li>
@@ -45,6 +45,8 @@
               <span>Order: <%= completed[i].order %></span>
               <span class="hide"><%= completed[i]._id %></span>
               <span class="hide"><%= completed[i].completed %></span>
+              <p><button type="submit" value="clear" class="btn btn-primary btn-sm clear">Clear</button</p>
+
             
             </li>
           <% } %>
