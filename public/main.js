@@ -1,54 +1,45 @@
-var complete = document.getElementsByClassName("completed");
-var trash = document.getElementsByClassName("clear");
+var orderButtons = document.getElementsByClassName("order");
+var submitOrderButton = document.getElementById('submit')
+var nameInput = document.getElementById("nameInput")
+submitOrderButton.addEventListener('click', submitOrder)
 
 
-Array.from(complete).forEach(function(element) {
-      element.addEventListener('click', function(){
-        const id = this.parentNode.parentNode.childNodes[9].innerText
-        const barista = document.querySelector('#barista').innerText
-        const customerName = this.parentNode.parentNode.childNodes[3].innerText
+/*
+0 Latte
+1 Cappucino
+2 House Blend
+*/
 
-        window.speechSynthesis.speak(new SpeechSynthesisUtterance('Order for ' + customerName));
+function submitOrder(event){
+    let order = document.querySelectorAll('.orderItem')
+    let orderArr = []
 
-        console.log(id)
-        
-        fetch('messages/like', {
-          method: 'put',
-          headers: {'Content-Type': 'application/json'},
-          body: JSON.stringify({
-            'id': id,
-            'barista': barista
-  
-          })
-        })
-        .then(response => {
-          if (response.ok) return response.json()
-        })
-        .then(data => {
-          console.log(data)
-          window.location.reload(true)
-        })
-      });
-});
-
-
-Array.from(trash).forEach(function(element) {
-  element.addEventListener('click', function(){
-    const id = this.parentNode.parentNode.childNodes[7].innerText
-
-
-    fetch('messages', {
-      method: 'delete',
+    for(let i = 0; i < order.length; i++){
+        orderArr[i] = order[i].innerHTML
+    }
+      console.log("sending name to the server", nameInput.value)
+    fetch('/', {
+      method: 'post',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify({
-       "id": id,
+       "order": orderArr,
+       "name": nameInput.value
       })
     }).then(function (response) {
       window.location.reload()
     })
-  });
-});
+}
 
-//https://usefulangle.com/post/98/javascript-text-to-speech how to add text to speech in your app
+Array.from(orderButtons).forEach(function(orderButton) {
+  orderButton.addEventListener('click', function(){
+    
+    let li = document.createElement('li')
+    li.innerHTML = orderButton.value
+    li.classList.add("orderItem")
+    document.getElementById("orderTicket").appendChild(li)
+
+    });
+})
+

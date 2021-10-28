@@ -32,7 +32,8 @@ module.exports = function(app, passport, db, ObjectId) {
 // roulette game route ===============================================================
 
     app.post('/', (req, res) => {
-      db.collection('order').save({name: req.body.name, order: req.body.drink, completed: false, barista: ''}, (err, savedResult) => {
+      console.log("name for order", req.body.name)
+      db.collection('order').save({name: req.body.name, order: req.body.order, completed: false, barista: ''}, (err, savedResult) => {
         if (err) return console.log(err)
         console.log('saved to database')
         res.render('index.ejs')

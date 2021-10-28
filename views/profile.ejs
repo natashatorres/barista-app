@@ -23,7 +23,7 @@
           <h3>Orders:</h3>
           <ul class="orders list-unstyled">
           <% for(var i=0; i <orders.length; i++) {%>
-            <li class="order box-bottom-shadow ">
+            <li class="orderUp order box-bottom-shadow ">
                 <span>Customer Name:</span>
               <span><%= orders[i].name %></span>
               <p>Order: <%= orders[i].order %></p>
@@ -39,7 +39,7 @@
           <h3>Completed Orders:</h3>
           <ul class="orders list-unstyled">
           <% for(var i=0; i <completed.length; i++) {%>
-            <li class="order box-bottom-shadow">
+            <li class="completedOrders order box-bottom-shadow">
               <p>Barista: <%= completed[i].barista%></p>
               <p>Customer Name: <%= completed[i].name %></p>
               <span>Order: <%= completed[i].order %></span>
@@ -54,7 +54,7 @@
 
 </div>
 
-<script src="main.js"></script>
+<script src="profile.js"></script>
 
 </body>
 </html>

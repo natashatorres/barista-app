@@ -8,23 +8,22 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Dancing+Script:wght@500&family=Quicksand:wght@300;500;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="index.css">
 </head>
 <body>
    
     <div class="container">
-        <span> Barista Sign-In <a href="/login" class="">Login</a></span>
-   
+        <span id="signin">Barista Sign-In <a href="/login" class="">Login</a></span>
+
         <img src="logo.png">
      
-
-  
-
+<div id="ordering">
+<section id="buttonsToOrder" class="box-bottom-shadow">
 
     <h1>Place Order</h1>
-    <form action="/" method="POST">
+    <!-- <form action="/" method="POST"> --><div id="form">
         <label for="name">Customer Name:</label>
-        <input class="order orderInput" type="text" value="" name="name" required>
+        <input id="nameInput" class="orderInput" type="text" value="" name="name" required>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Espresso">Espresso</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Latte">Latte</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Macchiato">Macchiato</button>
@@ -32,10 +31,18 @@
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="House Blend">House Blend</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Iced Latte">Iced Latte</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Iced Macchiato">Iced Macchiato</button>
-    </form>
+    <!-- </form> -->
+  
+</section>
+    <section id="ticket"  class="box-bottom-shadow">
+        <h1> Ticket</h1>
+        <ul id="orderTicket" class="list-unstyled">
+        </ul>
+        <button id="submit" class="btn btn-primary btn-lg box-bottom-shadow" type="submit" name="order" value="order">Submit Order</button>
 
+    </section>
 </div>
-
+</div>
 
 
 <!-- 
@@ -51,5 +58,6 @@
     </div> -->
 
 </div>
+<script src="main.js"></script>
 </body>
 </html>
