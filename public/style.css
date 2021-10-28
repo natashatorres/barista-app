@@ -99,3 +99,10 @@ li{
   margin-bottom: 2em;
   text-transform: uppercase;
 }
+
+
+.box-bottom-shadow {
+  -moz-box-shadow:    3px 3px 5px 6px #ccc;
+    -webkit-box-shadow: 3px 3px 5px 6px #ccc;
+        box-shadow:3px 3px 5px 6px #ccc;
+}
