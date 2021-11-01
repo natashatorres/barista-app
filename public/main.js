@@ -15,7 +15,7 @@ function submitOrder(event){
     let orderArr = []
 
     for(let i = 0; i < order.length; i++){
-        orderArr[i] = order[i].innerHTML
+        orderArr[i] = order[i].innerText
     }
       console.log("sending name to the server", nameInput.value)
     fetch('/', {
@@ -35,11 +35,42 @@ function submitOrder(event){
 Array.from(orderButtons).forEach(function(orderButton) {
   orderButton.addEventListener('click', function(){
     
+    let sizes = document.querySelectorAll('input[name="size"]')
+    let milkChoices = document.querySelectorAll('input[name="milk')
+    
+    let selectedValue;
+    for (const size of sizes) {
+        if (size.checked) {
+            selectedValue = size.value;
+        }
+    }
+
+    let milkValue;
+    for (const milk of milkChoices) {
+        if (milk.checked) {
+            milkValue = milk.value;
+        }
+    }
+
+
     let li = document.createElement('li')
-    li.innerHTML = orderButton.value
+    li.innerText = `${selectedValue} ${orderButton.value} with ${milkValue} Milk`
     li.classList.add("orderItem")
     document.getElementById("orderTicket").appendChild(li)
+
 
     });
 })
 
+// Array.from(sizeButtons).forEach(function(sizeButton) {
+//   sizeButton.addEventListener('click', function(){
+   
+// let span = document.createElement('span')
+// span.innerHTML = ` Size: ${sizeButton.value} `
+// span.classList.add("size")
+// document.querySelector('li').appendChild(span)
+//     });
+// })
+
+
+  

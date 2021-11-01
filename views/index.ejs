@@ -22,8 +22,22 @@
 
     <h1>Place Order</h1>
     <!-- <form action="/" method="POST"> --><div id="form">
-        <label for="name">Customer Name:</label>
-        <input id="nameInput" class="orderInput" type="text" value="" name="name" required>
+        <div id="sizes">
+        <input type="radio" class="size" id="tall" value="Tall" name="size">
+        <label for="tall" class="box-bottom-shadow">Tall</label>
+        <input type="radio" class="size" id="venti" value="Venti" name="size">
+        <label for="venti" class="box-bottom-shadow">Venti</label>
+        <input type="radio" class="size" id="grande" value="Grande" name="size">
+        <label for="grande" class="box-bottom-shadow">Grande</label>
+        </div>
+         <div id="milk">
+        <input type="radio" class="miik" id="Almond" value="Almond" name="milk">
+        <label for="Almond" class="box-bottom-shadow">Almond</label>
+        <input type="radio" class="milk" id="Whole" value="Whole" name="milk">
+        <label for="Whole" class="box-bottom-shadow">Whole</label>
+        <input type="radio" class="milk" id="Oat" value="Oat" name="milk">
+        <label for="Oat" class="box-bottom-shadow">Oat</label>
+        </div>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Espresso">Espresso</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Latte">Latte</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Macchiato">Macchiato</button>
@@ -31,16 +45,23 @@
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="House Blend">House Blend</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Iced Latte">Iced Latte</button>
         <button class="order btn btn-primary btn-lg box-bottom-shadow" type="submit" name="drink" value="Iced Macchiato">Iced Macchiato</button>
-    <!-- </form> -->
+        
+
+
+
+    
+        <!-- </form> -->
 
   
 </section>
     <section id="ticket"  class="box-bottom-shadow">
         <h1> Ticket</h1>
         <ul id="orderTicket" class="list-unstyled">
+            <label for="name">Customer Name:</label>
+        <input id="nameInput" class="orderInput" type="text" value="" name="name" required>
         </ul>
         <button id="submit" class="btn btn-primary btn-lg box-bottom-shadow" type="submit" name="order" value="order">Submit Order</button>
-
+        
     </section>
 </div>
 </div>
